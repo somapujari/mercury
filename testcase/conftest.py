@@ -19,4 +19,7 @@ def setup(request):
         driver = webdriver.Chrome(options=option)
     else:
         driver = webdriver.Firefox()
-    return driver
+
+    yield driver
+    driver.quit()
+
